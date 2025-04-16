@@ -1,1 +1,21 @@
-<p>list works!</p>
+<div class="header">
+  <h2>The List Of Notes</h2>
+
+  <button class="btn-add-new">Add New Note</button>
+</div>
+
+<div class="list">
+  <div class="card" *ngFor="let note of notesList">
+    <div class="row">
+      <h3 class="">{{note.title}}</h3>
+      <p>{{note.date}}</p>
+    </div>
+    <div class="row">
+      <p class="description-text">{{note.description}}</p>
+      <div class="horizontal">
+        <button class="btn-edit">Edit</button>
+        <button class="btn-delete" (click)="deleteNote(note.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

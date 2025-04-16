@@ -1,0 +1,54 @@
+.header {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+
+.btn-add-new {
+  border: none;
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 0;
+}
+
+.card {
+  width: 90%;
+  padding: 5px;
+  border: 1px solid gray;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.description-text {
+  color: gray;
+}
+
+.btn-edit {
+  color: blue;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  color: orangered;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
