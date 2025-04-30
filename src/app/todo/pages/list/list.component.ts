@@ -1,22 +1,23 @@
 import { Component } from '@angular/core';
-import { NoteModel } from '../../../_models/note.model';
 import { NgForOf } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { NoteService } from '../../../_services/note.service';
+import { NoteModel } from '../../../_models/note.model';
 
 @Component({
   selector: 'app-list',
-  imports: [NgForOf],
+  imports: [NgForOf, RouterLink],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
 export class ListComponent {
-  notesList: NoteModel[] = [
-    new NoteModel(1, 'Test Note', 'Test Description Note', new Date()),
-    new NoteModel(2, 'Test Note2', 'Test Description Note', new Date()),
-    new NoteModel(3, 'Test Note3', 'Test Description Note', new Date()),
-  ]
+  notesList: NoteModel[] = []
+
+  constructor(private noteService: NoteService) {
+    this.notesList = this.noteService.notesList
+  }
 
   deleteNote(id: number) {
-    var index = this.notesList.findIndex(x => x.id === id)
-    this.notesList.splice(index, 1);
+    this.noteService.deleteNote(id)
   }
 }
